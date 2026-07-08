@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samara Gym | Forge Your Legacy — Navi Mumbai's Premier Fitness Destination</title>
+  <meta name="description" content="Samara Gym is one of Navi Mumbai's biggest and best full-service fitness facilities. Premium strength training, personal coaching, CrossFit, HIIT, yoga, spinning, and transformative wellness.">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:title" content="Samara Gym | Forge Your Legacy">
+  <meta property="og:description" content="One of Navi Mumbai's premier full-service fitness facilities. Experience premium strength, precision coaching, and unmatched facility design.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./hero-discipline.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { DEFAULT: '#D4AF37', light: '#FFD700', dark: '#B8960C' },
+            dark: { DEFAULT: '#050505', 100: '#0A0A0A', 200: '#111111', 300: '#1A1A1A' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'spin-slow': 'spin 12s linear infinite',
+          },
+          keyframes: {
+            float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+            glow: { '0%': { boxShadow: '0 0 5px rgba(212,175,55,0.3)' }, '100%': { boxShadow: '0 0 20px rgba(212,175,55,0.6)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #050505;
+      --bg-secondary: #0A0A0A;
+      --bg-card: rgba(16, 16, 16, 0.75);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(212, 175, 55, 0.3);
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --text-tertiary: #666;
+      --accent: #D4AF37;
+      --accent-light: #FFD700;
+      --accent-dark: #B8960C;
+      --font: 'Inter', system-ui, sans-serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --max: 1400px;
+      --radius: 24px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { border: none; background: none; cursor: pointer; font-family: inherit; color: inherit; }
+    input, textarea, select { font-family: inherit; font-size: inherit; color: inherit; }
+
+    /* PRELOADER */
+    #preloader { position: fixed; inset: 0; z-index: 100000; background: #000 url('./preloader-bg.png') center/cover no-repeat; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 2.5rem; transition: opacity 1s ease, visibility 1s ease; }
+    #preloader::before { content: ''; position: absolute; inset: 0; background: rgba(5,5,5,0.82); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+    #preloader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
+    #preloader.skip-hint { position: absolute; bottom: 2rem; right: 2rem; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); cursor: pointer; transition: color 0.3s; z-index: 2; }
+    #preloader.skip-hint:hover { color: #fff; }
+    .preloader-logo { position: relative; width: min(90vw, 720px); opacity: 0; transform: scale(0.6); transition: transform 0.3s ease, opacity 0.8s ease; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(0.6rem, 1.5vw, 1rem); }
+    .preloader-logo.visible { opacity: 1; animation: logoPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    .preloader-logo img { width: 100%; max-height: min(40vh, 480px); height: auto; object-fit: contain; image-rendering: auto; -ms-interpolation-mode: bicubic; }
+    .preloader-logo-text { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.15em; perspective: 600px; }
+    .preloader-logo-text .letter { display: inline-block; font-size: clamp(1.2rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: 0.08em; color: #FFD700; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; line-height: 1; opacity: 0; transform: translateY(20px) rotateX(15deg) scale(0.8); animation: letterReveal 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+    @keyframes logoPop { 0% { opacity: 0; transform: scale(0.6); } 60% { opacity: 1; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes letterReveal { to { opacity: 1; transform: translateY(0) rotateX(0deg) scale(1); } }
+    .preloader-logo-text .space { width: 0.5em; }
+    .preloader-text { position: relative; z-index: 1; text-align: center; opacity: 0; transform: translateY(20px); transition: all 1s var(--ease); }
+    .preloader-text.visible { opacity: 1; transform: translateY(0); }
+    .preloader-subtitle { font-size: clamp(0.75rem, 2vw, 0.95rem); letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 2rem; animation: textShimmer 2.8s ease-in-out infinite; }
+    @keyframes textShimmer { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+    .preloader-progress { width: clamp(260px, 60vw, 380px); height: 2px; background: rgba(255,255,255,0.12); border-radius: 2px; overflow: hidden; margin: 0 auto; position: relative; }
+    .preloader-progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #D4AF37, #FFD700); transition: width 0.3s ease; box-shadow: 0 0 16px rgba(212,175,55,0.7); border-radius: 2px; }
+    .preloader-percent { font-size: 0.8rem; font-weight: 300; letter-spacing: 0.25em; color: rgba(255,255,255,0.5); margin-top: 1rem; font-variant-numeric: tabular-nums; }
+    .preloader-light-sweep { position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent); transform: translateX(-100%); pointer-events: none; }
+    #preloader.reveal .preloader-light-sweep { animation: sweep 2s ease-in-out forwards; }
+    @keyframes sweep { to { transform: translateX(100%); }}
+    @media (max-width: 768px) {
+      #preloader { gap: 2rem; }
+      .preloader-subtitle { letter-spacing: 0.2em; }
+    }
+
+    /* CUSTOM CURSOR */
+    .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s; }
+    .cursor-dot { width: 6px; height: 6px; background: var(--accent); box-shadow: 0 0 10px var(--accent); mix-blend-mode: difference; }
+    .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.4); transition: width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s; }
+    .cursor-ring.hover { width: 56px; height: 56px; border-color: var(--accent); box-shadow: 0 0 20px rgba(212,175,55,0.3); }
+    @media (max-width: 1024px) { .cursor-dot, .cursor-ring { display: none; } }
+
+    /* SCROLL PROGRESS */
+    #progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, #D4AF37, #FFD700); width: 0%; z-index: 100001; transition: width 0.1s linear; }
+
+    /* NAVIGATION */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.5s var(--ease); }
+    .nav.scrolled { background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 1rem 3rem; box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+    .nav-logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.25em; color: #FFD700; text-decoration: none; text-shadow: none; display: flex; align-items: center; }
+    .nav-logo-text { display: inline-block; animation: logoPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    @keyframes logoPop { 0% { opacity: 0; transform: scale(0.6); } 60% { opacity: 1; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+    .nav-toggle { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1rem; border-radius: 100px; border: 1px solid rgba(255,255,255,0.25); background: rgba(5,5,5,0.5); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #fff; cursor: pointer; transition: all 0.3s; z-index: 1002; position: relative; }
+    .nav-toggle:hover { border-color: rgba(255,255,255,0.45); background: rgba(5,5,5,0.75); }
+    .nav-toggle-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+    .nav-toggle-arrow { font-size: 0.85rem; transition: transform 0.35s; display: inline-block; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-arrow { transform: rotate(90deg); }
+    .nav-panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 85vw); background: rgba(5,5,5,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid var(--border); z-index: 1001; padding: 7rem 2.5rem 2.5rem; transform: translateX(100%); transition: transform 0.5s var(--ease); box-shadow: -20px 0 60px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 0.5rem; }
+    .nav-panel.open { transform: translateX(0); }
+    .nav-links { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
+    .nav-links a { display: block; padding: 0.9rem 1rem; border-radius: 14px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); transition: all 0.25s; text-decoration: none; }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-cta { padding: 0.75rem 1.75rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%); color: #050505; transition: all 0.3s var(--ease); position: relative; overflow: hidden; text-decoration: none; display: inline-block; margin-top: 1rem; }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212,175,55,0.4); color: #050505; }
+    @media (max-width: 640px) { .nav { padding: 1rem 1.25rem; } .nav.scrolled { padding: 0.75rem 1.25rem; } .nav-panel { padding: 6rem 1.75rem 2rem; } }
+
+    /* HERO */
+    .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.6s ease-in-out; will-change: opacity; }
+    .hero-slide.active { opacity: 1; }
+    .hero-dots { position: absolute; right: 3rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.75rem; z-index: 3; }
+    .hero-dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.4); background: transparent; cursor: pointer; transition: all 0.4s ease; padding: 0; }
+    .hero-dot.active { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 10px rgba(212,175,55,0.6); transform: scale(1.2); }
+    @media (max-width: 768px) { .hero-dots { display: none; } }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,5,5,0.15) 0%, rgba(5,5,5,0.55) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: var(--max); margin: 0 auto; padding: 0 3rem; width: 100%; }
+    .hero-subtitle { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: block; opacity: 0; animation: fadeUp 1s var(--ease) 0.5s forwards; }
+    .hero-title { font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 800; line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1.5rem; max-width: 900px; }
+    .hero-title .word { display: inline-block; opacity: 0; transform: translateY(50px); animation: wordReveal 0.8s var(--ease) forwards; }
+    .hero-title .word:nth-child(1) { animation-delay: 0.6s; }
+    .hero-title .word:nth-child(2) { animation-delay: 0.8s; }
+    .hero-title .word:nth-child(3) { animation-delay: 1s; }
+    .hero-title .highlight { background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    @keyframes wordReveal { to { opacity: 1; transform: translateY(0); } }
+    @keyframes popLoop {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      10% { opacity: 1; transform: scale(1.12); }
+      20% { opacity: 1; transform: scale(0.96); }
+      30% { opacity: 1; transform: scale(1.06); }
+      40% { opacity: 1; transform: scale(0.98); }
+      50% { opacity: 1; transform: scale(1.03); }
+      60% { opacity: 1; transform: scale(1); }
+    }
+    .hero-title.loop-active .word {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      animation: popLoop 3.2s ease-in-out infinite;
+    }
+    .hero-title.loop-active .word:nth-child(1) { animation-delay: 0s; }
+    .hero-title.loop-active .word:nth-child(2) { animation-delay: 0.15s; }
+    .hero-title.loop-active .word:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-desc { font-size: 1.125rem; color: var(--text-secondary); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fadeUp 1s var(--ease) 1.2s forwards; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s var(--ease) 1.4s forwards; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; transition: all 0.3s var(--ease); white-space: nowrap; position: relative; overflow: hidden; }
+    .btn-primary { background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%); color: #050505; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(212,175,55,0.35); }
+    .btn-secondary { border: 1px solid rgba(255,255,255,0.3); color: #fff; backdrop-filter: blur(10px); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.05); border-color: #fff; transform: translateY(-2px); }
+
+    /* SECTIONS */
+    section { padding: clamp(4rem, 10vw, 10rem) 3rem; position: relative; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: block; }
+    .section-title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .section-desc { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; line-height: 1.7; margin-bottom: 3rem; }
+
+    /* CARDS */
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); transition: all 0.5s var(--ease); overflow: hidden; position: relative; }
+    .card:hover { border-color: var(--border-hover); transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.15); }
+    .card-image { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+    .card:hover .card-image img { transform: scale(1.05); }
+    .card-badge { position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); padding: 0.4rem 0.8rem; border-radius: 100px; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1); color: var(--accent); }
+    .card-body { padding: 1.5rem; }
+    .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    .card-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; transition: gap 0.3s var(--ease); }
+    .card-link:hover { gap: 0.75rem; }
+
+    /* REVEAL ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delayed { transition-delay: 0.15s; }
+
+    /* STATS */
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .stat { text-align: center; padding: 2.5rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); transition: all 0.5s var(--ease); opacity: 0; transform: translateY(30px); }
+    .stats-grid.visible .stat:nth-child(1) { animation: statReveal 0.8s var(--ease) 0.05s forwards; }
+    .stats-grid.visible .stat:nth-child(2) { animation: statReveal 0.8s var(--ease) 0.2s forwards; }
+    .stats-grid.visible .stat:nth-child(3) { animation: statReveal 0.8s var(--ease) 0.35s forwards; }
+    .stats-grid.visible .stat:nth-child(4) { animation: statReveal 0.8s var(--ease) 0.5s forwards; }
+    @keyframes statReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .stat:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .stat-number { font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #fff; }
+    .stat-number .accent { color: var(--accent); }
+    .stat-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-secondary); margin-top: 0.75rem; }
+    .stat-sub { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.25rem; }
+    @media (max-width: 768px) { .stats-grid { gap: 1rem; } .stat { padding: 2rem 1.5rem; } }
+
+    /* ASSOCIATE BRANDS */
+    .partners { padding: 3rem 3rem; background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .partners-row { display: flex; justify-content: center; align-items: center; gap: clamp(2.5rem, 6vw, 5rem); flex-wrap: wrap; }
+    .partner-logo { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.5rem; border-radius: 16px; transition: transform 0.5s var(--ease), opacity 0.5s ease; opacity: 0; animation: partnerFade 0.8s ease forwards; }
+    .partner:nth-child(1) .partner-logo { animation-delay: 0.1s; }
+    .partner:nth-child(2) .partner-logo { animation-delay: 0.25s; }
+    @keyframes partnerFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .partner-logo:hover { transform: translateY(-4px); }
+    .partner-life { background: #c8102e; color: #fff; font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: clamp(1.1rem, 2.5vw, 1.6rem); letter-spacing: 0.04em; padding: 1rem 1.75rem; }
+    .partner-apollo { flex-direction: column; gap: 0.1rem; color: #008080; font-family: 'Arial', sans-serif; }
+    .partner-apollo-name { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
+    .partner-apollo-sub { font-size: clamp(0.65rem, 1.2vw, 0.85rem); font-weight: 700; letter-spacing: 0.35em; }
+    @media (max-width: 768px) { .partners { padding: 2rem 1.5rem; } .partners-row { gap: 2rem; } }
+
+    /* PROGRAMS GRID */
+    .programs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .programs-grid .card { display: flex; flex-direction: column; }
+    .programs-grid .card-image { aspect-ratio: 3/4; }
+    @media (max-width: 1024px) { .programs-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .programs-grid { grid-template-columns: 1fr; } }
+
+    /* TRAINERS GRID */
+    .trainers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .trainer-card .card-image { aspect-ratio: 3/4; }
+    .trainer-card .card-badge { position: absolute; top: 1rem; right: 1rem; left: auto; }
+    @media (max-width: 1024px) { .trainers-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .trainers-grid { grid-template-columns: 1fr; } }
+
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+    .pricing-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; text-align: center; position: relative; transition: all 0.5s var(--ease); }
+    .pricing-card:hover { border-color: var(--border-hover); transform: translateY(-8px); }
+    .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(212,175,55,0.08) 0%, rgba(16,16,16,0.75) 100%); }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%); color: #050505; padding: 0.35rem 1rem; border-radius: 100px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; box-shadow: 0 10px 30px rgba(212,175,55,0.4); }
+    .pricing-name { font-size: 1.125rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+    .pricing-price { display: flex; align-items: baseline; justify-content: center; gap: 0.25rem; margin-bottom: 0.5rem; }
+    .pricing-currency { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    .pricing-amount { font-size: 3rem; font-weight: 800; line-height: 1; }
+    .pricing-period { font-size: 0.875rem; color: var(--text-tertiary); }
+    .pricing-features { list-style: none; text-align: left; margin: 1.5rem 0; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .pricing-features li { padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; }
+    .pricing-features li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .pricing-card .btn { width: 100%; justify-content: center; margin-top: 1rem; }
+    @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } }
+
+    /* MEMBERSHIP TOGGLE */
+    .membership-toggle { position: relative; }
+    .toggle { position: relative; }
+    .toggle::after { content: ''; position: absolute; inset: 0; border-radius: 100px; background: transparent; transition: all 0.3s; }
+    .toggle.active::after { background: rgba(212,175,55,0.15); }
+    .toggle.active { border-color: rgba(212,175,55,0.5) !important; }
+    .membership-toggle .save-badge { transition: all 0.3s; }
+    .toggle-knob { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #FFD700; box-shadow: 0 0 8px rgba(255,215,0,0.8); transition: all 0.3s var(--ease); pointer-events: none; }
+    .toggle.active .toggle-knob { left: calc(100% - 23px); background: #FFD700; box-shadow: 0 0 12px rgba(255,215,0,1); }
+    #monthlyLabel.active { color: #fff; }
+    #yearlyLabel.active { color: #FFD700; }
+
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; auto-rows: 200px; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 16px; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 2; }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); auto-rows: 150px; } }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; auto-rows: 250px; } }
+
+    /* TESTIMONIALS CAROUSEL */
+    .carousel { overflow: hidden; width: 100%; position: relative; }
+    .carousel-track { display: flex; transition: transform 0.6s var(--ease); will-change: transform; }
+    .carousel-slide { min-width: 100%; }
+    .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; }
+    .carousel-dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.35); background: transparent; cursor: pointer; transition: all 0.35s; padding: 0; }
+    .carousel-dot.active { background: var(--accent); border-color: var(--accent); transform: scale(1.2); }
+
+    /* BMI MOBILE */
+    @media (max-width: 768px) {
+      #bmi > div { grid-template-columns: 1fr !important; }
+      #bmi > div > div:first-child { min-height: 260px; }
+    }
+
+    /* FAQ */
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border: 1px solid var(--border); border-radius: 16px; margin-bottom: 0.75rem; background: var(--bg-card); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); overflow: hidden; transition: border-color 0.3s; }
+    .faq-item.active { border-color: var(--border-hover); }
+    .faq-question { padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 1rem; gap: 1rem; text-align: left; width: 100%; }
+    .faq-icon { width: 20px; height: 20px; transition: transform 0.3s var(--ease); flex-shrink: 0; color: var(--accent); }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease), padding 0.5s var(--ease); }
+    .faq-item.active .faq-answer { max-height: 400px; }
+    .faq-answer-inner { padding: 0 1.5rem 1.25rem; color: var(--text-secondary); line-height: 1.7; }
+
+    /* VIDEO CARDS */
+    .video-card:hover .video-thumb { border-color: rgba(212,175,55,0.35); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .video-card:hover .video-play { transform: scale(1.1); box-shadow: 0 0 50px rgba(212,175,55,0.6); }
+    .video-thumb { transition: all 0.5s var(--ease); }
+    .video-play { transition: all 0.4s var(--ease); }
+
+    /* GALLERY LIST */
+    .gallery-card:hover { border-color: rgba(212,175,55,0.35); transform: translateY(-3px); box-shadow: 0 18px 45px rgba(0,0,0,0.35); }
+    .gallery-card { transition: all 0.4s var(--ease); }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--border); padding: 4rem 3rem 2rem; margin-top: 4rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: var(--max); margin: 0 auto; }
+    .footer-brand { display: flex; flex-direction: column; align-items: flex-start; }
+    .footer-brand a { display: flex; justify-content: center; width: 100%; }
+    .footer-brand p { color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem; text-align: left; }
+    .footer h4 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; color: var(--text-secondary); }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 0.5rem; }
+    .footer ul a { color: var(--text-tertiary); font-size: 0.9rem; transition: color 0.3s; }
+    .footer ul a:hover { color: #fff; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); max-width: var(--max); margin-left: auto; margin-right: auto; font-size: 0.8rem; color: var(--text-tertiary); }
+    .footer-social { display: flex; gap: 1rem; }
+    .footer-social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: all 0.3s; color: var(--text-secondary); }
+    .footer-social a:hover { border-color: var(--accent); color: var(--accent); background: rgba(212,175,55,0.05); }
+    @media (max-width: 1024px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; } }
+
+    /* WHATSAPP */
+    .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%); color: #050505; padding: 0.875rem 1.5rem; border-radius: 100px; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.875rem; box-shadow: 0 10px 30px rgba(212,175,55,0.4); transition: all 0.3s var(--ease); text-decoration: none; }
+    .whatsapp-float:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(212,175,55,0.5); }
+    @media (max-width: 640px) { .whatsapp-float { bottom: 1rem; right: 1rem; padding: 0.75rem 1.25rem; font-size: 0.8rem; } }
+
+    /* HERO INFO CARD */
+    .hero-info-card { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 280px; background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; z-index: 10; }
+    @media (max-width: 1024px) { .hero-info-card { display: none; } }
+
+    /* PULSE */
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    /* MOBILE */
+    @media (max-width: 640px) { .whatsapp-float { bottom: 1rem; right: 1rem; padding: 0.75rem 1.25rem; font-size: 0.8rem; } }
+
+    /* TEXT UTILITIES */
+    .text-center { text-align: center; }
+    .hidden-mobile { display: block; }
+    @media (max-width: 640px) { .hidden-mobile { display: none; } }
+
+    /* FEATURED TESTIMONIAL */
+    .featured-testimonial { background: linear-gradient(135deg, rgba(212,175,55,0.03) 0%, rgba(16,16,16,0.9) 100%); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center; }
+    .featured-testimonial-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); box-shadow: 0 0 30px rgba(212,175,55,0.2); }
+    .featured-testimonial-content .quote { font-size: 1.75rem; font-weight: 500; line-height: 1.5; font-style: italic; margin-bottom: 1.5rem; }
+    .featured-testimonial-content .author { font-weight: 700; color: var(--accent); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .featured-testimonial-content .role { font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem; }
+
+    /* VIDEO SECTION */
+    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .video-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/9; background: #000; border: 1px solid var(--border); }
+    .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    @media (max-width: 768px) { .video-grid { grid-template-columns: 1fr; } }
+
+    /* ANIMATED PROCESS */
+    .process-section { padding: 6rem 0; position: relative; overflow: hidden; background: #050505; }
+    .process-track-wrapper { overflow: hidden; position: relative; padding: 2rem 0; }
+    .process-track { display: flex; gap: 1.5rem; animation: processScroll 30s linear infinite; width: max-content; }
+    .process-track:hover { animation-play-state: paused; }
+    .process-card { min-width: 300px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; transition: all 0.4s var(--ease); flex-shrink: 0; }
+    .process-card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+    .process-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.75rem; }
+    .process-card h3 { font-size: 1.125rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+    .process-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+    .process-number { position: absolute; top: 1rem; right: 1rem; font-size: 3rem; font-weight: 800; color: rgba(212,175,55,0.08); line-height: 1; }
+    @keyframes processScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* INTERACTIVE PROCESS */
+    .interactive-process { padding: 6rem 0; background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%); }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; }
+    .process-steps::before { content: ''; position: absolute; top: 40px; left: 15%; right: 15%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.3; z-index: 0; }
+    .process-step { position: relative; z-index: 1; text-align: center; cursor: pointer; transition: transform 0.4s var(--ease); opacity: 1; }
+    .process-step:hover { transform: translateY(-12px); }
+    .process-step-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--bg-card); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; transition: all 0.4s var(--ease); position: relative; }
+    .process-step:hover .process-step-circle { border-color: var(--accent); box-shadow: 0 0 40px rgba(212,175,55,0.3); }
+    .process-step.active .process-step-circle { border-color: var(--accent); background: rgba(212,175,55,0.1); box-shadow: 0 0 40px rgba(212,175,55,0.3); }
+    .process-step h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+    .process-step p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+    .process-step .step-detail { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease), padding 0.5s var(--ease); font-size: 0.8rem; color: var(--text-secondary); background: rgba(212,175,55,0.05); border-radius: 12px; margin-top: 0.5rem; opacity: 0; }
+    .process-step.active .step-detail { max-height: 100px; padding: 0.75rem; opacity: 1; }
+    @media (max-width: 768px) { .process-steps { grid-template-columns: repeat(2, 1fr); } .process-steps::before { display: none; } }
+
+    /* BEFORE AFTER SLIDER */
+    .ba-slider { position: relative; width: 100%; max-width: 600px; aspect-ratio: 4/3; overflow: hidden; border-radius: var(--radius); cursor: ew-resize; user-select: none; }
+    .ba-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .ba-slider .ba-before { clip-path: inset(0 50% 0 0); }
+    .ba-slider .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: var(--accent); transform: translateX(-50%); cursor: ew-resize; }
+    .ba-slider .ba-handle::after { content: '⟨ ⟩'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--accent); color: #000; padding: 0.5rem 0.75rem; border-radius: 100px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-logo" id="preloaderLogo">
+      <img src="./samara-logo.png" alt="Samara Gym" loading="eager">
+      <div class="preloader-logo-text" id="preloaderLogoText" aria-hidden="true"></div>
+    </div>
+    <div class="preloader-text" id="preloaderText">
+      <div class="preloader-subtitle">Navi Mumbai's Premier Fitness Destination</div>
+      <div class="preloader-progress"><div class="preloader-progress-fill" id="preloaderFill"></div></div>
+      <div class="preloader-percent" id="preloaderPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <header class="nav" role="banner">
+    <a href="#home" class="nav-logo" aria-label="Samara Gym Home">
+      <span class="nav-logo-text">SAMARA</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav-toggle-label">MENU</span>
+      <span class="nav-toggle-arrow" aria-hidden="true">▸</span>
+    </button>
+    <nav class="nav-panel" id="navPanel" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#equipment">Equipment</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#gymtour">Gym Tour</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide active" style="background-image: url('./hero-slide-1.png');"></div>
+        <div class="hero-slide" style="background-image: url('./hero-slide-2.png');"></div>
+        <div class="hero-slide" style="background-image: url('./hero-slide-3.png');"></div>
+        <div class="hero-slide" style="background-image: url('./hero-slide-4.png');"></div>
+        <div class="hero-slide" style="background-image: url('./hero-slide-5.png');"></div>
+        <div class="hero-slide" style="background-image: url('./hero-slide-6.png');"></div>
+        <div class="hero-slide" style="background-image: url('./hero-slide-7.png');"></div>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(5,5,5,0.75) 0%, rgba(5,5,5,0.35) 40%, rgba(5,5,5,0.05) 100%);"></div>
+      <div class="hero-content">
+        <span class="hero-subtitle">Navi Mumbai's Premier Fitness Destination</span>
+        <h1 class="hero-title" id="heroTitle">
+          <span class="word">FORGE</span> <span class="word highlight">YOUR</span> <span class="word">LEGACY</span>
+        </h1>
+        <p class="hero-desc">Premium strength, precision coaching, and unmatched facility design.</p>
+        <div class="hero-actions" style="flex-wrap: wrap;">
+          <a href="#membership" class="btn btn-primary magnetic">Choose Genesis</a>
+          <a href="https://wa.me/912227814545?text=Hi%20Samara%20Gym%2C%20I%20want%20to%20book%20a%20session%20in%2030%20seconds" target="_blank" rel="noopener" class="btn btn-secondary magnetic">Book</a>
+          <a href="#videos" class="btn btn-secondary magnetic" style="display:inline-flex;align-items:center;gap:0.5rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Watch Gym Tour
+          </a>
+        </div>
+      </div>
+      <div class="hero-info-card">
+        <div class="hero-info-item" style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:0.25rem;">
+            <span style="font-size:1.5rem;font-weight:800;color:var(--accent);">4.9</span>
+            <div style="display:flex;flex-direction:column;line-height:1;">
+              <span style="color:var(--accent);font-size:0.65rem;">★★★★★</span>
+              <span style="color:var(--text-secondary);font-size:0.65rem;">Google</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-info-item" style="padding:0.75rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:1rem;">
+          <div style="font-size:1.25rem;font-weight:700;color:var(--accent);">2,300+</div>
+          <div style="font-size:0.75rem;color:var(--text-secondary);letter-spacing:0.1em;text-transform:uppercase;">Happy Members</div>
+        </div>
+        <div class="hero-info-item" style="margin-bottom:0.75rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,0.6);animation:pulse 2s infinite;"></span>
+            <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#22c55e;">Open Today</span>
+          </div>
+          <div style="font-size:1rem;font-weight:600;color:#fff;">6:00 AM – 11:00 PM</div>
+        </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+      <div class="hero-dots" id="heroDots" aria-label="Hero slides"></div>
+    </section>
+
+    <!-- ASSOCIATE BRANDS -->
+    <section class="partners" aria-label="Associate brands">
+      <div class="container">
+        <span class="section-label" style="text-align: center; display: block; margin-bottom: 0.5rem;">Associate Brands</span>
+        <div class="partners-row">
+          <div class="partner">
+            <div class="partner-logo partner-life">
+              <span class="partner-life-text">Life Fitness</span>
+            </div>
+          </div>
+          <div class="partner">
+            <div class="partner-logo partner-apollo" aria-label="Apollo Hospitals">
+              <span class="partner-apollo-name">Apollo</span>
+              <span class="partner-apollo-sub">HOSPITALS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat">
+            <div class="stat-number"><span class="counter" data-target="15">0</span><span class="accent">+</span></div>
+            <div class="stat-label">Elite Coaches</div>
+            <div class="stat-sub">Certified Experts</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number"><span class="counter" data-target="10000">0</span><span class="accent">+</span></div>
+            <div class="stat-label">Transformations</div>
+            <div class="stat-sub">Real People. Real Results.</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Google Rating</div>
+            <div class="stat-sub">Trusted by Thousands</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number"><span class="counter" data-target="12">0</span></div>
+            <div class="stat-label">Years</div>
+            <div class="stat-sub">Of Excellence</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div class="reveal">
+            <span class="section-label">Our Philosophy</span>
+            <h2 class="section-title">Where Discipline<br>Meets Design</h2>
+            <p class="section-desc">We believe fitness is not just physical—it's a ritual. From the moment you walk through our doors, every detail is engineered to elevate your mindset and amplify your results.</p>
+            <a href="#contact" class="btn btn-primary magnetic">Experience the Studio</a>
+          </div>
+          <div class="reveal reveal-delayed">
+            <div class="card" style="aspect-ratio:4/5;">
+              <img src="./philosophy-discipline.png" alt="Samara Gym philosophy wall" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Programs</span>
+          <h2 class="section-title">Precision Engineering<br>For Every Goal</h2>
+          <p class="section-desc" style="margin: 0 auto 3rem;">From explosive power to mindful movement. Each program is designed with clinical precision.</p>
+        </div>
+        <div class="programs-grid">
+          <div class="card reveal"><div class="card-image"><img src="./strength-training.png" alt="Strength Training" loading="lazy"><div class="card-badge">Strength</div></div><div class="card-body"><h3 class="card-title">Strength Training</h3><p class="card-text">Relentless strength development with precision equipment and expert coaching.</p><a href="#" class="card-link">Discover More →</a></div></div>
+          <div class="card reveal reveal-delayed"><div class="card-image"><img src="./crossfit.png" alt="CrossFit" loading="lazy"><div class="card-badge">CrossFit</div></div><div class="card-body"><h3 class="card-title">CrossFit</h3><p class="card-text">Functional fitness at its most demanding. Build grit, power, and resilience.</p><a href="#" class="card-link">Discover More →</a></div></div>
+          <div class="card reveal"><div class="card-image"><img src="./hiit.png" alt="HIIT" loading="lazy"><div class="card-badge">HIIT</div></div><div class="card-body"><h3 class="card-title">HIIT</h3><p class="card-text">Maximum metabolic output in minimum time. Science-driven, results guaranteed.</p><a href="#" class="card-link">Discover More →</a></div></div>
+          <div class="card reveal reveal-delayed"><div class="card-image"><img src="./yoga-mobility.png" alt="Yoga & Mobility at Samara Gym" loading="lazy"><div class="card-badge">Recovery</div></div><div class="card-body"><h3 class="card-title">Yoga & Mobility</h3><p class="card-text">Precision movement for peak recovery, flexibility, and mental clarity.</p><a href="#" class="card-link">Discover More →</a></div></div>
+          <div class="card reveal"><div class="card-image"><img src="./spinning.png" alt="Spinning" loading="lazy"><div class="card-badge">Cardio</div></div><div class="card-body"><h3 class="card-title">Spinning Studio</h3><p class="card-text">High-octane indoor cycling in a dark, immersive studio atmosphere.</p><a href="#" class="card-link">Discover More →</a></div></div>
+          <div class="card reveal reveal-delayed"><div class="card-image"><img src="./personal-training.png" alt="Personal Training" loading="lazy"><div class="card-badge">1-On-1</div></div><div class="card-body"><h3 class="card-title">Personal Training</h3><p class="card-text">Elite coaching tailored entirely to you. Unlock your full potential.</p><a href="#" class="card-link">Discover More →</a></div></div>
+          <div class="card reveal"><div class="card-image"><img src="./kids-fitness.png" alt="Kids Fitness" loading="lazy"><div class="card-badge">Youth</div></div><div class="card-body"><h3 class="card-title">Kids Fitness</h3><p class="card-text">Building healthy habits from the ground up through playful movement.</p><a href="#" class="card-link">Discover More →</a></div></div>
+          <div class="card reveal reveal-delayed"><div class="card-image"><img src="./nutrition.png" alt="Nutrition" loading="lazy"><div class="card-badge">Nutrition</div></div><div class="card-body"><h3 class="card-title">Nutrition Consultation</h3><p class="card-text">Fuel protocols designed by experts. Eat to perform, recover, and transform.</p><a href="#" class="card-link">Discover More →</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPMENT -->
+    <section id="equipment" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Facility</span>
+          <h2 class="section-title">World-Class Equipment</h2>
+          <p class="section-desc" style="margin: 0 auto;">Premium machines. Precision engineering. A training environment built for performance.</p>
+        </div>
+        <div class="equipment-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+          <div class="equipment-card reveal" style="position: relative; height: 400px; border-radius: 24px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=800&q=80" alt="Life Fitness" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease);">
+            <div class="equipment-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.3) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+              <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">Precision Series</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 300px;">Industry-leading cardio and selectorized equipment for peak performance.</p>
+            </div>
+          </div>
+          <div class="equipment-card reveal reveal-delayed" style="position: relative; height: 400px; border-radius: 24px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Free Weights" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease);">
+            <div class="equipment-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.3) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+              <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">Free Weight Temple</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 300px;">Olympic platforms, dumbbells up to 80kg, and dedicated lifting zones.</p>
+            </div>
+          </div>
+          <div class="equipment-card reveal" style="position: relative; height: 400px; border-radius: 24px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=800&q=80" alt="Functional Zone" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease);">
+            <div class="equipment-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.3) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+              <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">Functional Lab</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 300px;">Racks, rigs, sleds, and turf for unrestricted movement and conditioning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process-section">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Experience</span>
+          <h2 class="section-title">Your Journey<br>At Samara</h2>
+          <p class="section-desc" style="margin: 0 auto;">Four steps to transform your body and mind.</p>
+        </div>
+      </div>
+      <div class="process-track-wrapper">
+        <div class="process-track" id="processTrack">
+          <div class="process-card">
+            <span class="process-number">01</span>
+            <div class="process-icon">
+              <svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h3>InBody &amp; Fitness Test</h3>
+            <p>Comprehensive body composition analysis and fitness assessment to establish your baseline.</p>
+          </div>
+          <div class="process-card">
+            <span class="process-number">02</span>
+            <div class="process-icon">
+              <svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h3>Expert Training Session</h3>
+            <p>One-on-one guided session with a certified coach to understand your goals and potential.</p>
+          </div>
+          <div class="process-card">
+            <span class="process-number">03</span>
+            <div class="process-icon">
+              <svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h3>Exercise Chart Planning</h3>
+            <p>Personalized workout blueprint with periodization tailored to your schedule and objectives.</p>
+          </div>
+          <div class="process-card">
+            <span class="process-number">04</span>
+            <div class="process-icon">
+              <svg width="32" height="32" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h3>Nutrition Consultation</h3>
+            <p>Customized nutrition protocol designed by experts to fuel performance and recovery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PROCESS -->
+    <section class="interactive-process">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Methodology</span>
+          <h2 class="section-title">How We<br>Engineer Excellence</h2>
+        </div>
+        <div class="process-steps reveal" id="interactiveSteps">
+          <div class="process-step" data-step="1">
+            <div class="process-step-circle">
+              <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h4>Assessment</h4>
+            <p>InBody scan &amp; fitness test</p>
+            <div class="step-detail">Get a complete picture of your body composition, metabolic rate, and current fitness levels.</div>
+          </div>
+          <div class="process-step active" data-step="2">
+            <div class="process-step-circle">
+              <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h4>Training</h4>
+            <p>Expert-led guided session</p>
+            <div class="step-detail">Experience a world-class training environment with hands-on coaching from day one.</div>
+          </div>
+          <div class="process-step" data-step="3">
+            <div class="process-step-circle">
+              <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h4>Planning</h4>
+            <p>Custom exercise chart</p>
+            <div class="step-detail">Receive a periodized workout plan with clear milestones, rest days, and progressions.</div>
+          </div>
+          <div class="process-step" data-step="4">
+            <div class="process-step-circle">
+              <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="var(--accent)"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+            </div>
+            <h4>Nutrition</h4>
+            <p>Personalized diet protocol</p>
+            <div class="step-detail">Nutrition guidance aligned with your goals, whether that's fat loss, muscle gain, or performance.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINERS -->
+    <section id="trainers">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Our Coaches</span>
+          <h2 class="section-title">Elite. Certified.<br>Relentless.</h2>
+        </div>
+        <div class="trainers-grid">
+          <div class="card trainer-card reveal tilt-card">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=600&q=80" alt="Trainer" loading="lazy"><div class="card-badge">10+ Yrs</div></div>
+            <div class="card-body"><h3 class="card-title">Arjun Mehta</h3><p class="card-text">Strength &amp; Conditioning Specialist. NASM-CES, CSCS.</p><a href="#" class="card-link">Book Session →</a></div>
+          </div>
+          <div class="card trainer-card reveal reveal-delayed tilt-card">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" alt="Trainer" loading="lazy"><div class="card-badge">8+ Yrs</div></div>
+            <div class="card-body"><h3 class="card-title">Priya Sharma</h3><p class="card-text">CrossFit &amp; HIIT Master Trainer. CF-L2, ACE.</p><a href="#" class="card-link">Book Session →</a></div>
+          </div>
+          <div class="card trainer-card reveal tilt-card">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=600&q=80" alt="Trainer" loading="lazy"><div class="card-badge">12+ Yrs</div></div>
+            <div class="card-body"><h3 class="card-title">Rahul Kulkarni</h3><p class="card-text">Body Transformation Specialist. ISSA, Precision Nutrition.</p><a href="#" class="card-link">Book Session →</a></div>
+          </div>
+          <div class="card trainer-card reveal reveal-delayed tilt-card">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80" alt="Trainer" loading="lazy"><div class="card-badge">6+ Yrs</div></div>
+            <div class="card-body"><h3 class="card-title">Sneha Joshi</h3><p class="card-text">Yoga &amp; Mobility Expert. RYT-500, NASM-CPT.</p><a href="#" class="card-link">Book Session →</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSFORMATIONS -->
+    <section id="transformations" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Transformations</span>
+          <h2 class="section-title">Results That<br>Rewrite Reality</h2>
+        </div>
+        <div class="transformations-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+          <div class="transformation-card reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem; text-align: center; position: relative; overflow: hidden;">
+            <div class="t-metric" style="font-size: 3.5rem; font-weight: 800; line-height: 1; color: var(--accent); margin-bottom: 0.5rem;">18<span class="t-unit" style="font-size: 1.5rem; font-weight: 600; color: var(--accent);">KG</span></div>
+            <div class="t-label" style="display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem;">LOST</div>
+            <p class="t-name" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem;">Rahul M.</p>
+            <p class="t-duration" style="font-size: 0.875rem; color: var(--text-secondary);">12 Weeks | Strength &amp; HIIT</p>
+          </div>
+          <div class="transformation-card reveal reveal-delayed" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem; text-align: center; position: relative; overflow: hidden;">
+            <div class="t-metric" style="font-size: 3.5rem; font-weight: 800; line-height: 1; color: var(--accent); margin-bottom: 0.5rem;">8<span class="t-unit" style="font-size: 1.5rem; font-weight: 600; color: var(--accent);">KG</span></div>
+            <div class="t-label" style="display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem;">MUSCLE GAINED</div>
+            <p class="t-name" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem;">Ananya P.</p>
+            <p class="t-duration" style="font-size: 0.875rem; color: var(--text-secondary);">16 Weeks | Progressive Overload</p>
+          </div>
+          <div class="transformation-card reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem; text-align: center; position: relative; overflow: hidden;">
+            <div class="t-metric" style="font-size: 3.5rem; font-weight: 800; line-height: 1; color: var(--accent); margin-bottom: 0.5rem;"><span class="t-unit" style="font-size: 1.5rem; font-weight: 600; color: var(--accent);">30</span></div>
+            <div class="t-label" style="display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem;">DAYS TO SHREDS</div>
+            <p class="t-name" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem;">Karan S.</p>
+            <p class="t-duration" style="font-size: 0.875rem; color: var(--text-secondary);">8 Weeks | Elite Push Plan</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DR. SHIKHAR FEATURED TESTIMONIAL -->
+    <section id="featured-testimonial" style="background: linear-gradient(135deg, rgba(212,175,55,0.03) 0%, #050505 100%); padding: 4rem 0;">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Member Spotlight</span>
+          <h2 class="section-title">Trusted By<br>Professionals</h2>
+        </div>
+        <div class="featured-testimonial">
+          <img src="./samara-logo-200.png" alt="Dr. Shikhar" class="featured-testimonial-img" loading="eager">
+          <div class="featured-testimonial-content">
+            <p class="quote">"Samara has everything one could want in a gym as well as a great location, great staff, great owner. The best Part is that they have all latest equipment with expert trainers on the floor all the time for help."</p>
+            <p class="author">Dr. Shikhar</p>
+            <p class="role">Physician &amp; Member</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 2rem;">
+          <span class="section-label">Testimonials</span>
+          <h2 class="section-title">Stories That<br>Speak Louder</h2>
+        </div>
+        <div class="carousel">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <div class="testimonial-card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; max-width: 800px; margin: 0 auto; text-align: center;">
+                <p class="testimonial-quote" style="font-size: 1.5rem; font-weight: 500; line-height: 1.6; font-style: italic; margin-bottom: 1.5rem;">"Samara has everything one could want in a gym—great location, great staff, all latest equipment with expert trainers on the floor. The best part? They make you feel like family from day one."</p>
+                <p class="testimonial-author" style="font-weight: 700; color: var(--accent); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Dr. Shikhar — Physician &amp; Member</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="testimonial-card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; max-width: 800px; margin: 0 auto; text-align: center;">
+                <p class="testimonial-quote" style="font-size: 1.5rem; font-weight: 500; line-height: 1.6; font-style: italic; margin-bottom: 1.5rem;">"I have never felt more welcome and more comfortable than I do at SAMARA GYM. There is always someone ready to help with any questions, setting up machines, or spotting your PR."</p>
+                <p class="testimonial-author" style="font-weight: 700; color: var(--accent); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Vishal Gaikwad — Digital Entrepreneur</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="testimonial-card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; max-width: 800px; margin: 0 auto; text-align: center;">
+                <p class="testimonial-quote" style="font-size: 1.5rem; font-weight: 500; line-height: 1.6; font-style: italic; margin-bottom: 1.5rem;">"If you want a gym that is all about fitness and not running mindlessly for hours, a gym that is welcoming, friendly, and fun to be in, then look no further. Samara is the one."</p>
+                <p class="testimonial-author" style="font-weight: 700; color: var(--accent); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Shabhir S — Architect &amp; Member</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-dots" id="carouselDots" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+    <section id="membership" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 1rem;">
+          <span class="section-label">Membership</span>
+          <h2 class="section-title">Choose Your<br>Genesis</h2>
+        </div>
+        <div class="membership-toggle reveal" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem; padding: 0.75rem 1.25rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; width: fit-content; margin-left: auto; margin-right: auto;">
+          <span id="monthlyLabel" style="font-size: 0.875rem; font-weight: 600; color: #fff; letter-spacing: 0.05em;">Monthly</span>
+          <div class="toggle" id="pricingToggle" role="switch" aria-checked="false" tabindex="0" style="position: relative; width: 52px; height: 28px; background: #1a1a1a; border-radius: 100px; cursor: pointer; border: 1px solid rgba(255,255,255,0.25); transition: all 0.3s; flex-shrink: 0;">
+            <div class="toggle-knob"></div>
+          </div>
+          <span id="yearlyLabel" style="font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.45); letter-spacing: 0.05em;">Yearly</span>
+          <span class="save-badge" style="font-size: 0.75rem; padding: 0.3rem 0.85rem; border-radius: 100px; background: transparent; color: #FFD700; font-weight: 700; border: 1px solid rgba(212,175,55,0.7); letter-spacing: 0.05em;">2 Months Free</span>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card reveal">
+            <h3 class="pricing-name">Starter</h3>
+            <div class="pricing-price"><span class="pricing-currency">₹</span><span class="pricing-amount" data-monthly="3,500" data-yearly="2,999">3,500</span><span class="pricing-period">/ month</span></div>
+            <ul class="pricing-features"><li>Full gym access</li><li>Locker &amp; shower</li><li>Group classes</li><li>1 Free PT session/mo</li></ul>
+            <a href="https://wa.me/912227814545?text=Hi%20Samara%20Gym%2C%20I%20want%20to%20book%20the%20Starter%20package" target="_blank" rel="noopener" class="btn btn-secondary magnetic">Choose Genesis</a>
+          </div>
+          <div class="pricing-card featured reveal reveal-delayed">
+            <div class="pricing-badge">Most Popular</div>
+            <h3 class="pricing-name">Performance</h3>
+            <div class="pricing-price"><span class="pricing-currency">₹</span><span class="pricing-amount" data-monthly="6,500" data-yearly="5,499">6,500</span><span class="pricing-period">/ month</span></div>
+            <ul class="pricing-features"><li>Everything in Starter</li><li>Unlimited Group X</li><li>Steam &amp; Sauna</li><li>Monthly InBody Test</li><li>4 PT sessions/mo</li></ul>
+            <a href="https://wa.me/912227814545?text=Hi%20Samara%20Gym%2C%20I%20want%20to%20book%20the%20Performance%20package" target="_blank" rel="noopener" class="btn btn-primary magnetic">Choose Genesis</a>
+          </div>
+          <div class="pricing-card reveal">
+            <h3 class="pricing-name">Elite</h3>
+            <div class="pricing-price"><span class="pricing-currency">₹</span><span class="pricing-amount" data-monthly="10,000" data-yearly="7,999">10,000</span><span class="pricing-period">/ month</span></div>
+            <ul class="pricing-features"><li>Everything in Performance</li><li>Priority booking</li><li>Nutrition plan</li><li>Unlimited PT sessions</li><li>Guest passes (2/mo)</li></ul>
+            <a href="https://wa.me/912227814545?text=Hi%20Samara%20Gym%2C%20I%20want%20to%20book%20the%20Elite%20package" target="_blank" rel="noopener" class="btn btn-secondary magnetic">Choose Genesis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Gallery</span>
+          <h2 class="section-title">Inside The<br>Legacy</h2>
+        </div>
+        <div class="gallery-grid reveal">
+          <div class="gallery-item wide tall"><img src="./gallery-1.png" alt="Elite training duo" loading="lazy"></div>
+          <div class="gallery-item"><img src="./gallery-2.png" alt="Strength focus" loading="lazy"></div>
+          <div class="gallery-item"><img src="./gallery-3.png" alt="High intensity training" loading="lazy"></div>
+          <div class="gallery-item"><img src="./gallery-4.png" alt="Precision form" loading="lazy"></div>
+          <div class="gallery-item wide"><img src="./gallery-5.png" alt="Dual performance" loading="lazy"></div>
+          <div class="gallery-item tall"><img src="./gallery-6.png" alt="Power lifting" loading="lazy"></div>
+          <div class="gallery-item"><img src="./gallery-7.png" alt="Samara Gym facility" loading="lazy"></div>
+          <div class="gallery-item"><img src="./gallery-8.png" alt="Discipline meets design" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Videos</span>
+          <h2 class="section-title">See The<br>Experience</h2>
+          <p class="section-desc" style="margin: 0 auto;">Take a virtual tour and witness the energy inside Samara Gym.</p>
+        </div>
+        <div class="video-grid reveal">
+          <div class="video-card">
+            <div style="position:absolute;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:2;" class="video-poster" data-video="1dS1VT01vV4">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Samara Gym video preview" style="width:100%;height:100%;object-fit:cover;opacity:0.6;">
+              <div style="position:absolute;width:70px;height:70px;border-radius:50%;background:rgba(212,175,55,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;">▶</div>
+            </div>
+            <iframe src="" data-src="https://www.youtube.com/embed/1dS1VT01vV4" data-video-id="1dS1VT01vV4" title="Samara Gym Walk-through" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none;opacity:0;transition:opacity 0.5s;"></iframe>
+          </div>
+          <div class="video-card">
+            <div style="position:absolute;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:2;" class="video-poster" data-video="7TZAc5gPV40">
+              <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=800&q=80" alt="Samara Gym event video preview" style="width:100%;height:100%;object-fit:cover;opacity:0.6;">
+              <div style="position:absolute;width:70px;height:70px;border-radius:50%;background:rgba(212,175,55,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;">▶</div>
+            </div>
+            <iframe src="" data-src="https://www.youtube.com/embed/7TZAc5gPV40" data-video-id="7TZAc5gPV40" title="Samara Gym Event" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none;opacity:0;transition:opacity 0.5s;"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Insights</span>
+          <h2 class="section-title">The Knowledge</h2>
+          <p class="section-desc" style="margin: 0 auto;">Science-backed guides from our coaching team.</p>
+        </div>
+        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+          <article class="card blog-card reveal">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80" alt="Blog" loading="lazy"></div>
+            <div class="card-body"><div class="card-meta" style="font-size: 0.75rem; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; margin: 1rem 0 0.5rem;">Nutrition • 5 Min Read</div><h3 class="card-title">10 Nutrition Myths Debunked By Our Coaches</h3><p class="card-text">Separate fact from fiction with evidence-based guidance.</p><a href="#" class="card-link">Read Article →</a></div>
+          </article>
+          <article class="card blog-card reveal reveal-delayed">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=600&q=80" alt="Blog" loading="lazy"></div>
+            <div class="card-body"><div class="card-meta" style="font-size: 0.75rem; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; margin: 1rem 0 0.5rem;">Recovery • 4 Min Read</div><h3 class="card-title">The Science of Muscle Recovery &amp; Growth</h3><p class="card-text">Why sleep, nutrition, and timing matter more than you think.</p><a href="#" class="card-link">Read Article →</a></div>
+          </article>
+          <article class="card blog-card reveal">
+            <div class="card-image"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80" alt="Blog" loading="lazy"></div>
+            <div class="card-body"><div class="card-meta" style="font-size: 0.75rem; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; margin: 1rem 0 0.5rem;">Workout • 6 Min Read</div><h3 class="card-title">How HIIT Transforms Your Body Composition</h3><p class="card-text">The metabolic afterburn effect and how to leverage it.</p><a href="#" class="card-link">Read Article →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">FAQ</span>
+          <h2 class="section-title">Answers To Your<br>Questions</h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question">What should I bring for my first visit? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Comfortable workout attire, supportive shoes, a water bottle, and a towel. We provide all equipment, changing rooms, and steam facilities. Just bring your determination.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is a free trial available? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes. We offer a 3-day complimentary trial that includes a full facility tour, InBody analysis, and a guided expert session. No commitment required.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What are your operating hours? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Monday – Saturday: 6:00 AM to 11:00 PM. Sunday: 8:00 AM to 8:00 PM. Extended hours for Elite members.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Do you offer personal training? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Absolutely. Our team of 40+ certified trainers covers strength, CrossFit, yoga, nutrition, and body transformation. Sessions can be booked online or via WhatsApp.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is parking available? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes, dedicated secure parking is available for all members. Valet service is offered for Elite members during peak hours.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What payment methods do you accept? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <div class="faq-answer"><div class="faq-answer-inner">UPI, credit/debit cards, net banking, and cash. All major payment gateways supported for online renewals. Contact us for corporate bulk billing.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BMI CALCULATOR -->
+    <section id="bmi">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 560px; background: #050505; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div style="position: relative; overflow: hidden;">
+          <img src="./bmi-bg.png" alt="BMI" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;" loading="lazy">
+          <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.05) 60%, rgba(5,5,5,0.35) 100%);"></div>
+        </div>
+        <div style="padding: clamp(2.5rem, 5vw, 5rem); display: flex; flex-direction: column; justify-content: center; position: relative;">
+          <div style="display: flex; justify-content: center; margin-bottom: 1.25rem;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block;"></span>
+          </div>
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem;">KNOW YOUR NUMBER</p>
+            <h2 style="font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: 0.02em;"><span style="color: var(--accent);">TRANSFORM</span> <span style="color: #fff;">WITH KNOWLEDGE.</span></h2>
+            <p style="margin-top: 1rem; color: var(--text-secondary); max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.6;">Your body is unique. Your goals are personal. Calculate your BMI and take the first step towards a stronger, healthier you.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div>
+              <label style="display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 0.5rem;">Height (CM)</label>
+              <input type="number" id="bmiHeightCm" value="175" min="100" max="250" style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 14px; color: #fff; outline: none; transition: border-color 0.3s;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 0.5rem;">Weight (KG)</label>
+              <input type="number" id="bmiWeightKg" value="68" min="30" max="300" style="width: 100%; padding: 0.85rem 1rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 14px; color: #fff; outline: none; transition: border-color 0.3s;">
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem;">
+            <button class="btn btn-primary magnetic" style="flex: 1; justify-content: center;" onclick="calculateBMI()">CALCULATE BMI →</button>
+            <button class="btn btn-secondary magnetic" style="padding: 0.85rem 1.1rem; border-radius: 14px; justify-content: center;" onclick="resetBMI()">RESET</button>
+          </div>
+          <p style="font-size: 0.7rem; color: var(--text-tertiary); letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--accent);">🔒</span> Your data is secure and never shared.</p>
+          <div class="bmi-result" id="bmiResult" style="display:none; margin-top: 1.5rem; padding: 1.5rem; background: rgba(0,0,0,0.35); border-radius: 18px; text-align: center; border: 1px solid var(--border);">
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 0.75rem;">YOUR BMI</div>
+            <div class="bmi-value" id="bmiValue" style="font-size: 3.5rem; font-weight: 800; color: var(--accent); line-height: 1;">0.0</div>
+            <div class="bmi-category" id="bmiCategory" style="font-size: 0.9rem; font-weight: 700; margin-top: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;">—</div>
+            <div style="margin-top: 1rem; height: 6px; border-radius: 3px; background: linear-gradient(90deg, #3b82f6 0%, #22c55e 35%, #eab308 60%, #f97316 80%, #ef4444 100%); position: relative; overflow: hidden;">
+              <div id="bmiIndicator" style="position: absolute; top: -4px; bottom: -4px; width: 3px; background: #fff; left: 0%; transition: left 0.5s ease; box-shadow: 0 0 8px rgba(0,0,0,0.6);"></div>
+            </div>
+            <p id="bmiMessage" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.75rem;">—</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Begin Your<br>Journey Today</h2>
+        </div>
+        <div class="contact-grid reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+          <form class="contact-form" onsubmit="handleContactSubmit(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+            <input type="text" placeholder="Your Name *" required style="padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; color: #fff; outline: none; transition: border-color 0.3s;">
+            <input type="email" placeholder="Email Address *" required style="padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; color: #fff; outline: none; transition: border-color 0.3s;">
+            <input type="tel" placeholder="Phone Number" required style="padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; color: #fff; outline: none; transition: border-color 0.3s;">
+            <select required style="padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; color: #fff; outline: none; transition: border-color 0.3s;"><option value="">Service Interest</option><option>Free Trial</option><option>Personal Training</option><option>Membership</option><option>Kids Fitness</option><option>Nutrition</option><option>Other</option></select>
+            <textarea placeholder="Tell us about your goals..." style="padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; color: #fff; outline: none; transition: border-color 0.3s; min-height: 120px; resize: vertical;"></textarea>
+            <button type="submit" class="btn btn-primary magnetic">Send Inquiry</button>
+          </form>
+          <div class="contact-info" style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;">
+              <div class="contact-icon" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.25rem; flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="currentColor"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+              </div>
+              <div><h4 style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem;">Location</h4><p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">B/4, First Floor, Moraj Palm Paradise, Plot No 8, Sector – 17, Sanpada, Navi Mumbai – 400705</p></div>
+            </div>
+            <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;">
+              <div class="contact-icon" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.25rem; flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="24" cy="24" r="22" stroke-dasharray="6 4"/><circle cx="24" cy="24" r="18" fill="#050505"/><path d="M24 12 L28 22 H20 Z" fill="#D4AF37"/><path d="M20 22 L18 28 H22 L24 34 L26 28 H30 L28 22" stroke-linejoin="round"/><path d="M17 10 L19 13 L23 14 L21 17.5 L22 22 L17 20 L13 22 L14 17.5 L12 14 L16 13Z" fill="#FFD700"/><path d="M31 10 L33 13 L37 14 L35 17.5 L36 22 L31 20 L27 22 L28 17.5 L26 14 L30 13Z" fill="#FFD700"/><circle cx="24" cy="36" r="10" stroke="currentColor"/><text x="24" y="39" text-anchor="middle" fill="#D4AF37" font-size="5.5" font-weight="800" letter-spacing="0.5">SAMARA</text></svg>
+              </div>
+              <div><h4 style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem;">Call</h4><p style="font-size: 0.9rem; color: var(--text-secondary);">+91-22-27814545</p><p style="font-size: 0.9rem; color: var(--text-secondary);">+91-22-27816565</p><p style="font-size: 0.8rem; color: var(--accent);">Available during gym hours</p></div>
+            </div>
+            <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;">
+              <div class="contact-icon" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.25rem; flex-shrink: 0;">✉️</div>
+              <div><h4 style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem;">Email</h4><p style="font-size: 0.9rem; color: var(--text-secondary);">info@samaragym.com</p></div>
+            </div>
+            <div class="contact-card" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;">
+              <div class="contact-icon" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.25rem; flex-shrink: 0;">🕐</div>
+              <div><h4 style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem;">Working Hours</h4><div class="hours-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.85rem;"><div>Mon-Sat: 6AM – 11PM</div><div>Sun: 8AM – 8PM</div></div></div>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--text-secondary);">Onboarding Process</h4>
+              <ol style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem; color: var(--text-secondary); list-style: decimal; padding-left: 1.25rem;"><li>InBody &amp; Fitness Test</li><li>Expert Training Session</li><li>Exercise Chart Planning</li><li>Nutrition Consultation</li></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GYM TOUR -->
+    <section id="gymtour">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Gym Tour</span>
+          <h2 class="section-title">Experience<br>Samara Gym</h2>
+        </div>
+
+        <div class="reveal" style="margin-bottom: 4rem;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="width: 40px; height: 1px; background: var(--accent);"></div>
+            <h3 style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);">Gym Videos</h3>
+            <div style="flex: 1; height: 1px; background: var(--border);"></div>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">These videos highlight the facility's environment, equipment, and professional offerings.</p>
+          <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+            <a href="https://www.youtube.com/watch?v=1dS1VT01vV4" target="_blank" rel="noopener" class="video-card reveal" style="display: block; text-decoration: none; color: inherit;">
+              <div class="video-thumb" style="position: relative; aspect-ratio: 16/9; background: url('https://img.youtube.com/vi/1dS1VT01vV4/hqdefault.jpg') center/cover no-repeat; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: all 0.5s var(--ease);">
+                <div class="video-play" style="width: 56px; height: 56px; border-radius: 50%; background: rgba(212,175,55,0.9); display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--ease); box-shadow: 0 0 30px rgba(212,175,55,0.4);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5.14v14l11-7-11-7z" fill="#050505"/></svg>
+                </div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 60%);"></div>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                  <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;">Facility Overview</div>
+                  <div style="font-size: 0.9rem; font-weight: 600; color: #fff; line-height: 1.3;">Gym Facility & Events Overview</div>
+                </div>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.6;">An exploration of the gym's events and premium equipment, showcasing the fitness environment at India's premium fitness center.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=7TZAc5gPV40" target="_blank" rel="noopener" class="video-card reveal" style="display: block; text-decoration: none; color: inherit;">
+              <div class="video-thumb" style="position: relative; aspect-ratio: 16/9; background: url('https://img.youtube.com/vi/7TZAc5gPV40/hqdefault.jpg') center/cover no-repeat; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: all 0.5s var(--ease);">
+                <div class="video-play" style="width: 56px; height: 56px; border-radius: 50%; background: rgba(212,175,55,0.9); display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--ease); box-shadow: 0 0 30px rgba(212,175,55,0.4);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5.14v14l11-7-11-7z" fill="#050505"/></svg>
+                </div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 60%);"></div>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                  <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;">Training Showcase</div>
+                  <div style="font-size: 0.9rem; font-weight: 600; color: #fff; line-height: 1.3;">Professional Training Showcase 1</div>
+                </div>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.6;">Features professional training techniques available at the facility, which is powered by Life Fitness.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=EfngXa-1lbY" target="_blank" rel="noopener" class="video-card reveal" style="display: block; text-decoration: none; color: inherit;">
+              <div class="video-thumb" style="position: relative; aspect-ratio: 16/9; background: url('https://img.youtube.com/vi/EfngXa-1lbY/hqdefault.jpg') center/cover no-repeat; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: all 0.5s var(--ease);">
+                <div class="video-play" style="width: 56px; height: 56px; border-radius: 50%; background: rgba(212,175,55,0.9); display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--ease); box-shadow: 0 0 30px rgba(212,175,55,0.4);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5.14v14l11-7-11-7z" fill="#050505"/></svg>
+                </div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 60%);"></div>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                  <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;">Training Showcase</div>
+                  <div style="font-size: 0.9rem; font-weight: 600; color: #fff; line-height: 1.3;">Professional Training Showcase 2</div>
+                </div>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.6;">Highlights the wide range of training options backed by certified fitness trainers in Navi Mumbai.</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="width: 40px; height: 1px; background: var(--accent);"></div>
+            <h3 style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);">Workout Videos</h3>
+            <div style="flex: 1; height: 1px; background: var(--border);"></div>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">These entries are specifically categorized under the workout section to demonstrate various fitness routines.</p>
+          <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+            <a href="https://www.youtube.com/watch?v=JY5fm5eJYac" target="_blank" rel="noopener" class="video-card reveal" style="display: block; text-decoration: none; color: inherit;">
+              <div class="video-thumb" style="position: relative; aspect-ratio: 16/9; background: url('https://img.youtube.com/vi/JY5fm5eJYac/hqdefault.jpg') center/cover no-repeat; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: all 0.5s var(--ease);">
+                <div class="video-play" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(212,175,55,0.9); display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--ease); box-shadow: 0 0 24px rgba(212,175,55,0.35);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5.14v14l11-7-11-7z" fill="#050505"/></svg>
+                </div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 60%);"></div>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                  <div style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;">Workout Session</div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #fff; line-height: 1.3;">Workout Video Session 1</div>
+                </div>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.6rem; line-height: 1.5;">A featured workout video demonstrating routines for members, ranging from weightlifting to cross-training.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=JY5fm5eJYac" target="_blank" rel="noopener" class="video-card reveal" style="display: block; text-decoration: none; color: inherit;">
+              <div class="video-thumb" style="position: relative; aspect-ratio: 16/9; background: url('https://img.youtube.com/vi/JY5fm5eJYac/hqdefault.jpg') center/cover no-repeat; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: all 0.5s var(--ease);">
+                <div class="video-play" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(212,175,55,0.9); display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--ease); box-shadow: 0 0 24px rgba(212,175,55,0.35);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5.14v14l11-7-11-7z" fill="#050505"/></svg>
+                </div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 60%);"></div>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                  <div style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;">Workout Session</div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #fff; line-height: 1.3;">Workout Video Session 2</div>
+                </div>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.6rem; line-height: 1.5;">A continuation of the workout series showing professional training programs offered at the Sanpada location.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=JY5fm5eJYac" target="_blank" rel="noopener" class="video-card reveal" style="display: block; text-decoration: none; color: inherit;">
+              <div class="video-thumb" style="position: relative; aspect-ratio: 16/9; background: url('https://img.youtube.com/vi/JY5fm5eJYac/hqdefault.jpg') center/cover no-repeat; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: all 0.5s var(--ease);">
+                <div class="video-play" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(212,175,55,0.9); display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--ease); box-shadow: 0 0 24px rgba(212,175,55,0.35);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5.14v14l11-7-11-7z" fill="#050505"/></svg>
+                </div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 60%);"></div>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                  <div style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;">Workout Session</div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #fff; line-height: 1.3;">Workout Video Session 3</div>
+                </div>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.6rem; line-height: 1.5;">Visual demonstration of fitness routines designed to accommodate various member preferences and goals.</p>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=JY5fm5eJYac" target="_blank" rel="noopener" class="video-card reveal" style="display: block; text-decoration: none; color: inherit;">
+              <div class="video-thumb" style="position: relative; aspect-ratio: 16/9; background: url('https://img.youtube.com/vi/JY5fm5eJYac/hqdefault.jpg') center/cover no-repeat; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: all 0.5s var(--ease);">
+                <div class="video-play" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(212,175,55,0.9); display: flex; align-items: center; justify-content: center; transition: all 0.4s var(--ease); box-shadow: 0 0 24px rgba(212,175,55,0.35);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5.14v14l11-7-11-7z" fill="#050505"/></svg>
+                </div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 60%);"></div>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                  <div style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;">Workout Session</div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #fff; line-height: 1.3;">Workout Video Session 4</div>
+                </div>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.6rem; line-height: 1.5;">Part of the curated gallery of workout videos that members can also contribute to for featuring.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT GALLERY -->
+    <section id="gallery">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Events</span>
+          <h2 class="section-title">Event Galleries</h2>
+        </div>
+
+        <div class="reveal" style="margin-bottom: 4rem;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="width: 40px; height: 1px; background: var(--accent);"></div>
+            <h3 style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);">Event Galleries</h3>
+            <div style="flex: 1; height: 1px; background: var(--border);"></div>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">These links feature various social and fitness events hosted at the facility.</p>
+          <div class="gallery-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+            <a href="https://www.samaragym.com/dt_galleries/christmas/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.02em;">Christmas Event</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Highlights of holiday celebrations and community gatherings at the gym.</p>
+              <div style="margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/dt_galleries/garba/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.02em;">Garba Event</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Coverage of traditional dance celebrations held for members.</p>
+              <div style="margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/gallery_entries/samara-gym-2019/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.02em;">SAMARA GYM 2019</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">A retrospective look at the gym's community and activities throughout 2019.</p>
+              <div style="margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/dt_galleries/drew-neal-meetup/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.02em;">Drew Neal Meetup</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Exclusive photos from the fitness meetup event featuring Drew Neal.</p>
+              <div style="margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/dt_galleries/5298/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.02em;">Trekking Event</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Visuals from outdoor adventure activities like trekking organized by the fitness center.</p>
+              <div style="margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/dt_galleries/functional-circuit-event/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.02em;">Functional Circuit Event</div>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Photos capturing high-intensity functional circuit training competitions and events.</p>
+              <div style="margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-bottom: 4rem;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="width: 40px; height: 1px; background: var(--accent);"></div>
+            <h3 style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);">Fitness Programs & Classes</h3>
+            <div style="flex: 1; height: 1px; background: var(--border);"></div>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">Specific galleries showcasing the variety of group exercises and specialized training offered.</p>
+          <div class="gallery-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+            <a href="https://www.samaragym.com/gallery_entries/spinning/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.55rem; padding: 1.35rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1rem; font-weight: 700; color: #fff;">Spinning</div>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">Features the indoor cycling studio and high-energy spinning sessions.</p>
+              <div style="margin-top: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/gallery_entries/yoga/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.55rem; padding: 1.35rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1rem; font-weight: 700; color: #fff;">Yoga</div>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">Showcases yoga sessions aimed at improving flexibility and mindfulness.</p>
+              <div style="margin-top: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/gallery_entries/zumba/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.55rem; padding: 1.35rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1rem; font-weight: 700; color: #fff;">Zumba</div>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">Highlights the vibrant dance-fitness environment of the Zumba classes.</p>
+              <div style="margin-top: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="width: 40px; height: 1px; background: var(--accent);"></div>
+            <h3 style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);">Facility & Equipment</h3>
+            <div style="flex: 1; height: 1px; background: var(--border);"></div>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">Galleries focusing on the gym's infrastructure and professional tools.</p>
+          <div class="gallery-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+            <a href="https://www.samaragym.com/gallery_entries/equipments/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.55rem; padding: 1.35rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1rem; font-weight: 700; color: #fff;">Equipments</div>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">Detailed photos of the premium Life Fitness equipment used at India's premium fitness center.</p>
+              <div style="margin-top: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/gallery_entries/workouts/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.55rem; padding: 1.35rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1rem; font-weight: 700; color: #fff;">Workouts</div>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">Action shots showing members and trainers during various professional training routines.</p>
+              <div style="margin-top: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+
+            <a href="https://www.samaragym.com/gallery_entries/facilties/" target="_blank" rel="noopener" class="gallery-card reveal" style="display: flex; flex-direction: column; gap: 0.55rem; padding: 1.35rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; text-decoration: none; color: inherit; transition: all 0.4s var(--ease);">
+              <div style="font-size: 1rem; font-weight: 700; color: #fff;">Facilities</div>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">An overview of the general gym environment, locker rooms, and infrastructure in Navi Mumbai.</p>
+              <div style="margin-top: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">View Gallery →</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo" aria-label="Samara Gym Home">
+          <img src="./samara-logo-200.png" alt="Samara Gym" class="nav-logo-img" loading="lazy">
+        </a>
+        <p>One of Navi Mumbai's biggest and best full-service fitness facilities. Forge your legacy with precision, passion, and purpose.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#trainers">Trainers</a></li>
+          <li><a href="#membership">Membership</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#">Strength Training</a></li>
+          <li><a href="#">CrossFit</a></li>
+          <li><a href="#">HIIT</a></li>
+          <li><a href="#">Yoga &amp; Mobility</a></li>
+          <li><a href="#">Spinning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+912227814545">+91-22-27814545</a></li>
+          <li><a href="mailto:info@samaragym.com">info@samaragym.com</a></li>
+          <li><a href="#">Navi Mumbai, Maharashtra</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Samara Gym. All rights reserved. Built with passion in Navi Mumbai.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4S5.12 4 3.4 4.46a2.78 2.78 0 0 0-1.94 1.96A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 9.6-.46a2.78 2.78 0 0 0 1.94-1.96A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/912227814545?text=Hi%20Samara%20Gym%2C%20I%20want%20to%20book%20a%20session%20in%2030%20seconds" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Book in 30 seconds via WhatsApp">Book In 30 Seconds</a>
+
+  <script>
+    /* PRELOADER */
+    const preloader = document.getElementById('preloader');
+    const logoEl = document.getElementById('preloaderLogo');
+    const textEl = document.getElementById('preloaderText');
+    const fillEl = document.getElementById('preloaderFill');
+    const percentEl = document.getElementById('preloaderPercent');
+
+    /* PRELOADER LOGO TEXT */
+    const logoTextEl = document.getElementById('preloaderLogoText');
+    const logoText = 'SAMARA GYM';
+    logoTextEl.innerHTML = logoText.split('').map((char, i) => {
+      if (char === ' ') return `<span class="space" aria-hidden="true"></span>`;
+      return `<span class="letter" style="animation-delay:${1.2 + i * 0.06}s">${char}</span>`;
+    }).join('');
+
+    setTimeout(() => logoEl.classList.add('visible'), 300);
+    setTimeout(() => textEl.classList.add('visible'), 800);
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 8) + 2;
+      if (progress > 100) progress = 100;
+      fillEl.style.width = progress + '%';
+      percentEl.textContent = progress + '%';
+      const scale = 0.6 + (progress / 100) * 0.4;
+      logoEl.style.transform = 'scale(' + scale + ')';
+      if (progress >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          logoEl.style.transform = 'scale(1)';
+          endPreloader();
+        }, 600);
+      }
+    }, 180);
+
+    
+
+    function endPreloader() {
+      preloader.classList.add('reveal');
+      setTimeout(() => preloader.classList.add('loaded'), 2200);
+    }
+
+    /* CURSOR */
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorRing = document.querySelector('.cursor-ring');
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; cursorDot.style.left = mouseX + 'px'; cursorDot.style.top = mouseY + 'px'; });
+    function animateCursor() { cursorRing.style.left = mouseX + 'px'; cursorRing.style.top = mouseY + 'px'; requestAnimationFrame(animateCursor); }
+    animateCursor();
+    document.querySelectorAll('a, button, .card, .toggle, .gallery-item').forEach(el => { el.addEventListener('mouseenter', () => cursorRing.classList.add('hover')); el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover')); });
+
+    /* SCROLL PROGRESS */
+    window.addEventListener('scroll', () => { const scrollTop = window.scrollY; const docHeight = document.documentElement.scrollHeight - window.innerHeight; document.getElementById('progress').style.width = ((scrollTop / docHeight) * 100) + '%'; });
+
+    /* NAV */
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 80));
+    const navToggle = document.getElementById('navToggle');
+    const navPanel = document.getElementById('navPanel');
+
+    function openMenu() { navPanel.classList.add('open'); navToggle.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { navPanel.classList.remove('open'); navToggle.classList.remove('active'); navToggle.setAttribute('aria-expanded', 'false'); }
+
+    navToggle.addEventListener('click', () => { const isOpen = navPanel.classList.toggle('open'); navToggle.classList.toggle('active', isOpen); navToggle.setAttribute('aria-expanded', isOpen); });
+    navPanel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => closeMenu()));
+    document.addEventListener('click', (e) => { if (!e.target.closest('.nav')) closeMenu(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+    /* REVEAL */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    /* COUNTERS */
+    const counters = document.querySelectorAll('.counter'); let counted = false;
+    const countObserver = new IntersectionObserver((entries) => { if (entries[0].isIntersecting && !counted) { counted = true; counters.forEach(counter => { const target = +counter.dataset.target; const duration = 2000; const start = performance.now(); function update(currentTime) { const elapsed = currentTime - start; const progress = Math.min(elapsed / duration, 1); const eased = 1 - Math.pow(1 - progress, 3); counter.textContent = Math.floor(target * eased).toLocaleString(); if (progress < 1) requestAnimationFrame(update); else counter.textContent = target.toLocaleString();} requestAnimationFrame(update); }); } }, { threshold: 0.5 });
+    const statsSection = document.querySelector('.stats-grid'); if (statsSection) countObserver.observe(statsSection);
+
+    /* HERO SLIDESHOW */
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let currentHeroSlide = 0;
+    const totalHeroSlides = heroSlides.length;
+    const heroDotsContainer = document.getElementById('heroDots');
+    for (let i = 0; i < totalHeroSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => {
+        heroSlides[currentHeroSlide].classList.remove('active');
+        heroDotsContainer.querySelectorAll('.hero-dot').forEach(d => d.classList.remove('active'));
+        currentHeroSlide = i;
+        heroSlides[currentHeroSlide].classList.add('active');
+        dot.classList.add('active');
+      });
+      heroDotsContainer.appendChild(dot);
+    }
+    const heroInterval = setInterval(() => {
+      heroSlides[currentHeroSlide].classList.remove('active');
+      heroDotsContainer.querySelectorAll('.hero-dot').forEach(d => d.classList.remove('active'));
+      currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
+      heroSlides[currentHeroSlide].classList.add('active');
+      const activeDot = heroDotsContainer.querySelectorAll('.hero-dot')[currentHeroSlide];
+      if (activeDot) activeDot.classList.add('active');
+    }, 6000);
+
+    /* HERO PARALLAX */
+    const heroSlidesContainer = document.querySelector('.hero-slides');
+    window.addEventListener('scroll', () => { if (window.scrollY < window.innerHeight) heroSlidesContainer.style.transform = 'translateY(' + (window.scrollY * 0.4) + 'px)'; });
+
+    /* TILT CARDS */
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', e => { const rect = card.getBoundingClientRect(); const x = e.clientX - rect.left; const y = e.clientY - rect.top; const centerX = rect.width / 2; const centerY = rect.height / 2; card.style.transform = 'perspective(1000px) rotateX(' + (((y - centerY) / centerY) * -8) + 'deg) rotateY(' + (((x - centerX) / centerX) * 8) + 'deg) translateY(-8px)'; });
+      card.addEventListener('mouseleave', () => { card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)'; });
+    });
+
+    /* MAGNETIC BUTTONS */
+    document.querySelectorAll('.magnetic').forEach(btn => {
+      btn.addEventListener('mousemove', e => { const rect = btn.getBoundingClientRect(); const x = e.clientX - rect.left - rect.width / 2; const y = e.clientY - rect.top - rect.height / 2; btn.style.transform = 'translate(' + (x * 0.25) + 'px, ' + (y * 0.25) + 'px)'; });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0)'; });
+    });
+
+    /* CAROUSEL */
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    const slides = track.querySelectorAll('.carousel-slide'); let currentSlide = 0; const totalSlides = slides.length;
+    for (let i = 0; i < totalSlides; i++) { const dot = document.createElement('button'); dot.className = 'carousel-dot' + (i === 0 ? ' active' : ''); dot.setAttribute('aria-label', 'Go to slide ' + (i + 1)); dot.addEventListener('click', () => { track.style.transform = 'translateX(-' + (i * 100) + '%)'; dotsContainer.querySelectorAll('.carousel-dot').forEach((d, idx) => d.classList.toggle('active', idx === i)); currentSlide = i; }); dotsContainer.appendChild(dot); }
+
+    /* PRICING TOGGLE */
+    const toggle = document.getElementById('pricingToggle'); const monthlyLabel = document.getElementById('monthlyLabel'); const yearlyLabel = document.getElementById('yearlyLabel');
+    toggle.addEventListener('click', () => { const isYearly = toggle.classList.toggle('active'); toggle.setAttribute('aria-checked', isYearly); monthlyLabel.classList.toggle('active', !isYearly); yearlyLabel.classList.toggle('active', isYearly); document.querySelectorAll('.pricing-amount').forEach(el => el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly); });
+    toggle.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); } });
+
+    /* FAQ ACCORDION */
+    document.querySelectorAll('.faq-question').forEach(button => { button.addEventListener('click', () => { const item = button.parentElement; const isActive = item.classList.contains('active'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active')); if (!isActive) item.classList.add('active'); }); });
+
+    /* BMI CALCULATOR */
+    function calculateBMI() {
+      const cm = parseFloat(document.getElementById('bmiHeightCm').value) || 0;
+      const kg = parseFloat(document.getElementById('bmiWeightKg').value) || 0;
+      const heightM = cm / 100;
+      const resultDiv = document.getElementById('bmiResult');
+      if (!heightM || !kg || heightM <= 0 || kg <= 0) {
+        resultDiv.style.display = 'block';
+        document.getElementById('bmiValue').textContent = '—';
+        document.getElementById('bmiCategory').textContent = 'Enter valid height and weight';
+        document.getElementById('bmiMessage').textContent = 'Please enter values above.';
+        document.getElementById('bmiIndicator').style.left = '0%';
+        return;
+      }
+      const bmi = kg / (heightM * heightM);
+      let category = '', message = '', color = '', percent = 0;
+      if (bmi < 18.5) {
+        category = 'Underweight'; color = '#D4AF37'; percent = 18;
+        message = 'Consider increasing nutrient-dense calories and strength training.';
+      } else if (bmi < 25) {
+        category = 'Normal Weight'; color = '#22c55e'; percent = 38;
+        message = 'Great baseline. Keep training consistent and eat for performance.';
+      } else if (bmi < 30) {
+        category = 'Overweight'; color = '#eab308'; percent = 58;
+        message = 'Small, consistent changes in training and diet will move the needle.';
+      } else if (bmi < 35) {
+        category = 'Obese Class I'; color = '#f97316'; percent = 75;
+        message = 'Start with low-impact cardio and a structured progressive plan.';
+      } else if (bmi < 40) {
+        category = 'Obese Class II'; color = '#ef4444'; percent = 88;
+        message = 'Focus on mobility, daily movement, and coaching-led progression.';
+      } else {
+        category = 'Obese Class III'; color = '#ef4444'; percent = 95;
+        message = 'Please consult a physician before beginning any new program.';
+      }
+      resultDiv.style.display = 'block';
+      document.getElementById('bmiValue').textContent = bmi.toFixed(1);
+      const catEl = document.getElementById('bmiCategory');
+      catEl.textContent = category; catEl.style.color = color;
+      document.getElementById('bmiMessage').textContent = message;
+      document.getElementById('bmiIndicator').style.left = percent + '%';
+    }
+
+    function resetBMI() {
+      document.getElementById('bmiHeightCm').value = '175';
+      document.getElementById('bmiWeightKg').value = '68';
+      document.getElementById('bmiResult').style.display = 'none';
+      document.getElementById('bmiValue').textContent = '0.0';
+      document.getElementById('bmiCategory').textContent = '—';
+      document.getElementById('bmiMessage').textContent = '—';
+      document.getElementById('bmiIndicator').style.left = '0%';
+    }
+
+    /* CONTACT FORM */
+    function handleContactSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('button[type="submit"]'); const originalText = btn.textContent; btn.textContent = 'Message Sent ✓'; btn.style.background = 'linear-gradient(135deg, #FFD700 0%, #D4AF37 100%)'; setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 3000); }
+
+    /* HERO REVEAL DELAYED */
+    setTimeout(() => document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible')), 900);
+    setTimeout(() => { const heroTitle = document.getElementById('heroTitle'); if (heroTitle) heroTitle.classList.add('loop-active'); }, 2200);
+
+    /* VIDEO POSTERS */
+    document.querySelectorAll('.video-poster').forEach(poster => {
+      poster.addEventListener('click', () => {
+        const iframe = poster.nextElementSibling;
+        if (iframe && iframe.tagName === 'IFRAME') {
+          iframe.src = iframe.dataset.src;
+          iframe.style.opacity = '1';
+          poster.style.opacity = '0';
+          setTimeout(() => poster.style.display = 'none', 500);
+        }
+      });
+    });
+
+    /* INTERACTIVE PROCESS STEPS */
+    document.querySelectorAll('.process-step').forEach(step => {
+      step.addEventListener('click', () => {
+        const wasActive = step.classList.contains('active');
+        document.querySelectorAll('.process-step').forEach(s => s.classList.remove('active'));
+        if (!wasActive) step.classList.add('active');
+      });
+      step.addEventListener('mouseenter', () => {
+        document.querySelectorAll('.process-step').forEach(s => { if (s !== step) s.style.opacity = '0.35'; });
+        step.style.opacity = '1';
+      });
+      step.addEventListener('mouseleave', () => {
+        document.querySelectorAll('.process-step').forEach(s => s.style.opacity = '1');
+      });
+    });
+
+    /* DUPLICATE PROCESS CARDS FOR INFINITE SCROLL */
+    const processTrack = document.getElementById('processTrack');
+    if (processTrack) {
+      const cards = processTrack.innerHTML;
+      processTrack.innerHTML = cards + cards;
+    }
+
+    /* PAUSE PROCESS SCROLL ON HOVER */
+    if (processTrack) {
+      processTrack.addEventListener('mouseenter', () => processTrack.style.animationPlayState = 'paused');
+      processTrack.addEventListener('mouseleave', () => processTrack.style.animationPlayState = 'running');
+    }
+  </script>
+</body>
+</html>
